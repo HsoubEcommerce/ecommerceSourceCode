@@ -15,12 +15,17 @@ import 'jquery-ui-touch-punch/jquery.ui.touch-punch.min.js';
 
 $(document).ready(function() {
 
+  $(document).on('click', '.allow-focus', function (e) {
+    e.stopPropagation();
+  });
+
   $('[data-toggle="tooltip"]').tooltip();
 
   $('.add-to-cart-btn').click(function() {
       alert('أضيف المُنتج إلى عربة الشراء');
   });
 
+  $('#copyright').text("جميع الحقوق محفوظة للمتجر سنة " + new Date().getFullYear());
     
   $('.product-option input[type="radio"]').change(function() {
     $(this).parents('.product-option').siblings().removeClass('active');
